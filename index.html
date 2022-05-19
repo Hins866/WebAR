@@ -27,29 +27,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-entity gltf-model="./model/bird/scene.gltf" 
+                <a-entity gltf-model="./model/magnemite/scene.gltf" 
                 rotation="0 180 0" 
                 scale="0.15 0.15 0.15"
-                
-                />
-            </a-marker>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker2.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerB"
-            >
-                <a-entity gltf-model="./model/dragonite/scene.gltf" 
-                rotation="0 180 0" 
-                scale="0.08 0.08 0.08"
                 animation-mixer
                 />
             </a-marker>
+
+
 
             <a-entity camera></a-entity>
         </a-scene>
@@ -90,4 +75,22 @@
     <a-entity camera></a-entity>
   </a-scene>
 </body>
-</html> -->
+</html> 
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker2.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity gltf-model="./model/dragonite/scene.gltf" 
+                rotation="0 180 0" 
+                scale="0.08 0.08 0.08"
+                animation-mixer
+                />
+            </a-marker>
+-->
