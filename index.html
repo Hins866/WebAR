@@ -26,11 +26,7 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-entity
-                    gltf-model="model/bird/scene.gltf"
-                    scale="5 5 5"
-                    position="50 150 0"
-                ></a-entity>
+                <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"  animation-mixer/>
             </a-marker>
 
             <a-entity camera></a-entity>
@@ -67,6 +63,22 @@
         <a-entity gltf-model="model/bird/scene.gltf" scale="5 5 5" position="50 150 0">
         </a-entity>
       </a-marker>
+      <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    gltf-model="model/bird/scene.gltf"
+                    scale="5 5 5"
+                    position="50 150 0"
+                ></a-entity>
+            </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
