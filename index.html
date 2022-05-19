@@ -6,9 +6,11 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    </head>
+        <link rel="stylesheet" type="text/css" href="./style.css"/>
+      </head>
 
     <body style="margin: 0; overflow: hidden;">
+        <div class="centered instructions"></div>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -19,7 +21,7 @@
         >
               <!-- Check point 1 show images of various bird species-->
               <a-marker
-                  id="animated-marker2"
+                  id="animated-marker1"
                   type="pattern"
                   preset="custom"
                   url="assets/marker.patt"
@@ -29,15 +31,15 @@
                   id="markerA"
               >
                   <a-entity gltf-model="./model/articuno/scene.gltf" 
-                      rotation="0 100 0" 
-                      scale="0.2 0.2 0.2"
+                      rotation="0 50 0" 
+                      scale="0.02 0.02 0.02"
                       
                   />
               </a-marker>
 
               <!-- Check point 2 animation model -->
               <a-marker
-                  id="animated-marker1"
+                  id="animated-marker2"
                   type="pattern"
                   preset="custom"
                   url="assets/marker2.patt"
@@ -54,9 +56,12 @@
                   />
             </a-marker>
 
-            <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 114.143611; latitude: 22.486674;" animation-mixer/>
+            
             <a-entity camera></a-entity>
         </a-scene>
+        <div class="centered">
+            <button data-action="change"></button>
+        </div>
     </body>
 </html>
 <!-- 
