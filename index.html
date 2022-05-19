@@ -35,26 +35,25 @@
                       animation-mixer
                   />
               </a-marker>
+              
               <!-- Check point 2 animation model -->
               <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                  id="animated-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/marker.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;"
+                  id="markerA"
               >
-                <a-entity 
-                    gltf-model="./model/magnemite/scene.gltf" 
-                    rotation="-90 180 0" 
-                    scale="0.15 0.15 0.15"
-                    animation-mixer
-                />
+                  <a-entity 
+                      gltf-model="./model/magnemite/scene.gltf" 
+                      rotation="-90 180 0" 
+                      scale="0.15 0.15 0.15"
+                      animation-mixer
+                  />
             </a-marker>
-
-
 
             <a-entity camera></a-entity>
         </a-scene>
