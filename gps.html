@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-</head>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
+        <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script>
+            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+        </script>
+    </head>
 
-<body style='margin: 0; overflow: hidden;'>
-    <a-scene
-        vr-mode-ui="enabled: false"
-		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-        <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 114.143611; latitude: 22.486674;" animation-mixer/>
-        <a-camera gps-camera rotation-reader></a-camera>
-	</a-scene>
-</body>
+    <body style='margin: 0; overflow: hidden;'>
+        <div class="centered instructions">Location Based Mode</div>
+        <a-scene
+            vr-mode-ui="enabled: false"
+            embedded
+            arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+                <a-entity 
+                gltf-model="./model/articuno/scene.gltf" 
+                rotation="0 180 0" 
+                scale="0.15 0.15 0.15" 
+                gps-entity-place="longitude: 114.143611; latitude: 22.486674;" 
+                animation-mixer
+                />
+            <a-camera gps-camera rotation-reader></a-camera>
+        </a-scene>
+        <div class="centered">
+            <button data-action="Change Camera" onclick="window.location.href = 'https://hins866.github.io/WebAR/';">Change Mod</button>
+            <button data-action="Place Mode"></button>
+            <button data-action="Cap Screen"></button>
+        </div>
+    </body>
+</html>
