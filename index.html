@@ -9,6 +9,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
+        
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -24,23 +25,20 @@
               <!-- Check point 1 show images of various bird species-->
               <a-marker
                   markerhandler emitevents="true" 
-                  cursor="rayOrigin: mouse"
-                  id="animated-marker1"
+                  id="CP1-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/marker.patt"
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;"
-                  id="markerA"
+                  
               >
                   <a-entity
-                      id="cp1-bird" 
+                      id="CP1-bird" 
                       gltf-model="./model/articuno/scene.gltf" 
                       rotation="-90 0 0"
-                      scale="0.02 0.02 0.02"
-                      
-                      
+                      scale="0.02 0.02 0.02"                      
                   />
               </a-marker>
 
