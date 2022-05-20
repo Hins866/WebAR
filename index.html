@@ -10,7 +10,7 @@
       </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <div class="centered instructions"></div>
+        <div class="centered instructions">Testing</div>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -37,6 +37,8 @@
                       gltf-model="./model/articuno/scene.gltf" 
                       rotation="0 50 0" 
                       scale="0.02 0.02 0.02"
+                      class="clickable"
+                      gesture-handler
                       
                   />
               </a-marker>
@@ -57,11 +59,29 @@
                       rotation="-90 100 0" 
                       scale="0.15 0.15 0.15"
                       animation-mixer
+                      
                   />
               </a-marker>
 
               <!-- Check point 3 3d model interactive with animation -->
-
+              <a-marker
+                  id="animated-marker3"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/marker3.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;"
+                  id="markerC"
+              >
+                  <a-entity 
+                      gltf-model="./model/dragonite/scene.gltf" 
+                      rotation="-90 0 0" 
+                      scale="0.5 0.5 0.5"
+                      animation-mixer
+                      
+                  />
+              </a-marker>
             
             <a-entity camera></a-entity>
         </a-scene>
