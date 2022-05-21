@@ -95,9 +95,11 @@
                       
                   />
               </a-marker>
+              
+            <a-entity camera>
               <a-entity cursor="fuse: false;rayOrigin:mouse;" raycaster="objects:a-box" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">
               </a-entity>
-            <a-entity camera></a-entity>
+            </a-entity>
         </a-scene>
         <div class="centered">
             <button data-action="Change Camera" onclick="window.location.href = 'https://hins866.github.io/WebAR/gps';">Change Mod</button>
