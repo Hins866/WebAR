@@ -8,12 +8,9 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script>
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
         <script src="./event.js"></script>
-        <script>AFRAME.registerComponent('cursor-listener', {
+        <script>AFRAME.registerComponent('accept-click', {
             init: function () {
             this.el.addEventListener('click', function (evt) {
               alert("testing");
@@ -51,7 +48,7 @@
                       gltf-model="./model/bird/scene.gltf" 
                       rotation="-90 0 0"
                       scale="0.5 0.5 0.5"
-                      cursor-listener
+                      accept-click
                   />
                   <a-entity 
                   geometry="primitive: plane;" 
