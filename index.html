@@ -10,7 +10,14 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
         <script src="./event.js"></script>
-       
+        <script>AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+            this.el.addEventListener('click', function (evt) {
+              alert("testing");
+              });
+            }
+            });
+        </script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -27,7 +34,6 @@
               <!-- Check point 1 show images of various bird species-->
               <a-marker
                   markerhandler emitevents="true" 
-                  id="CP1-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/marker.patt"
