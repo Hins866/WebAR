@@ -10,7 +10,7 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
         <script src="js/models.js"></script>
-        <script src="js/userState.js"></script>
+        <script src="js/screenshot.js"></script>
         <script src="js/interaction.js"></script>
     </head>
 
@@ -94,8 +94,9 @@
         <div class="centered">
             <button data-action="Change Camera" onclick="window.location.href = 'https://hins866.github.io/WebAR/gps';">Change Mod</button>
             <button data-action="Place Mode">Place Mode</button>
-            <button data-action="Cap Screen">Cap Screen</button>
+            <button id="snap-img">Save Photo</button>
         </div>
+        <a href="#" id="download-link">DOWNLOAD</a>
     </body>
 </html>
 
