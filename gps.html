@@ -7,10 +7,9 @@
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="js/gps.js"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="js/models.js"></script>
-        <script src="js/interaction.js"></script>
-        <title>AR Treasure Fragment Collection GAME</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -32,19 +31,19 @@
                     look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
-                    scale="0.2 0.2 0.2"
+                    scale="0.008357046240778186 0.008357046240778186 0.008357046240778186"
                     gps-entity-place="latitude: 22.486674; longitude: 114.143611;"
                 ></a-entity>
 
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
-        <div class="ui"><img id="snap">
-            <a href ="https://hins866.github.io/WebAR/gps" id="GPS-Mode" title="GPS Mode" >GPS Mode</a>    
-            <a href ="https://hins866.github.io/WebAR/hit-test" id="Place-Mode" title="Place Mode" >Place Mode</a>
-            <a href ="#" id="delete-photo" title="Delete Photo" class="disabled"><i class=" material-icons">delete</i></a>
-            <a href ="#" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-            <a href ="#" id="download-photo" download="WebARCap.png" title="Save Photo" class="disabled" target="_blank"> <i class="material-icons">file_download</i></a>
-          </div>
-        <script src="js/screenshot.js"></script> 
+		<div class="ui"><img id="snap">
+			<a href ="https://hins866.github.io/hh/gps" id="GPS-Mode" title="GPS Mode" >GPS Mode</a>    
+			<a href ="#" id="Place-Mode" title="Place Mode" >Place Mode</a>
+			<a href ="#" id="delete-photo" title="Delete Photo" class="disabled"><i class=" material-icons">delete</i></a>
+			<a href ="#" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+			<a href ="#" id="download-photo" download="WebARCap.png" title="Save Photo" class="disabled" target="_blank"> <i class="material-icons">file_download</i></a>
+		  </div>
+		<script src="js/screenshot.js"></script> 
     </body>
 </html>
