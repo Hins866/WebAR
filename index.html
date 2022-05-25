@@ -21,19 +21,15 @@
           <a-asset-item id="CP1-model" src="./model/bird/scene.gltf"></a-asset-item>
           <a-asset-item id="CP2-model" src="./model/magnemite/scene.gltf"></a-asset-item>
           <a-asset-item id="CP3-model" src="./model/little_tokyo/scene.gltf"></a-asset-item>
-          <a-asset-item id="CP4-model" src="./model/question_mark_block/scene.gltf"></a-asset-item>
       </a-assets>
       <a-marker id="CP1-marker" type="pattern" url="assets/marker.patt">
-        <a-entity id="CP1"   image="./assets/bird.png" scale="1 1 1"class="clickable"rotation="-90 0 0" gesture-handler ></a-entity>
+        <a-image src="assets/bird.png" scale="1 1 1" class="clickable" rotation="-90 0 0" gesture-handler></a-image>
       </a-marker>
       <a-marker id="CP2-marker" type="pattern" url="assets/marker2.patt">
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
       </a-marker>
       <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
         <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.01 0.01 0.01" animation-mixer></a-entity>
-      </a-marker>
-      <a-marker id="CP4-marker" type="pattern" url="assets/marker4.patt">
-        <a-entity id="CP4"  gltf-model="#CP4-model" rotation="-90 0 0" scale="0.005 0.005 0.005"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>

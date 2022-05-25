@@ -36,12 +36,7 @@ function initiateModels() {
         name: 'CP3',
         dialogue: 'Congratulation! You find Check Point 3',
         successDialogue: 'You had find Check Point 3'
-      },
-      {
-        name: 'CP4',
-        dialogue: 'You find Check Point 4, Please enter Your GPS location to find the final boss! latitude and longitude',
-        successDialogue: 'You had find Check Point 4 var name = prompt("What is your name?"); var num = prompt("What is your favorite number? ");'
-      },
+      }
     ];
 
     buildersArray.forEach(function(builder){
