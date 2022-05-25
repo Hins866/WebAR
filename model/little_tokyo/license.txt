@@ -1,0 +1,11 @@
+Model Information:
+* title:	Little Tokyo
+* source:	https://sketchfab.com/3d-models/little-tokyo-327da9787a6940f69a40e040a71fa4c0
+* author:	SavageSeggwaye (https://sketchfab.com/SavageSeggwaye)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Little Tokyo" (https://sketchfab.com/3d-models/little-tokyo-327da9787a6940f69a40e040a71fa4c0) by SavageSeggwaye (https://sketchfab.com/SavageSeggwaye) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,102 +1,53 @@
-<!doctype html>
 <html>
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="./style.css"/>
-        <script src="js/models.js"></script>
-        <script src="js/screenshot.js"></script>
-        <script src="js/interaction.js"></script>
-    </head>
+  <head>
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+      <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+      <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="js/models.js"></script>
+      <script src="js/interaction.js"></script>
+      <title>AR Treasure Fragment Collection GAME</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <div class="centered instructions">Image Tracking Mode</div>
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-                <a-assets>
-                    <a-asset-item id="CP2-model" src="./model/magnemite/scene.gltf"></a-asset-item>
-                    <a-asset-item id="CP3-model" src="./model/dragonite/scene.gltf"></a-asset-item>
-                </a-assets>
-                <!-- Check point 1 show images of various bird species-->
-                <a-marker
-                    id="CP1-marker"
-                    markerhandler emitevents="true" 
-                    type="pattern"
-                    preset="custom"
-                    url="assets/marker.patt"
-                    raycaster="objects: .clickable"
-                    emitevents="true"
-                    cursor="fuse: false; rayOrigin: mouse;"
-                    
-                >
-                    <a-entity
-                        id="CP1-bird" 
-                        gltf-model="./model/bird/scene.gltf" 
-                        rotation="-90 0 0"
-                        scale="0.5 0.5 0.5"
-                        accept-click
-                    />
-                  
-                </a-marker>
-
-                <!-- Check point 2 animation model -->
-                <a-marker
-                    id="CP2-marker"
-                    type="pattern"
-                    preset="custom"
-                    url="assets/marker2.patt"
-                    raycaster="objects: .clickable"
-                    emitevents="true"
-                    cursor="fuse: false; rayOrigin: mouse;"
-                >
-                    <a-entity 
-                        gltf-model="#CP2-model" 
-                        rotation="-90 100 -90" 
-                        scale="0.15 0.15 0.15"
-                        animation-mixer   
-                    />
-                </a-marker>
-
-                <!-- Check point 3 3d model interactive with animation -->
-                <a-marker
-                    id="CP3-marker"
-                    type="pattern"
-                    preset="custom"
-                    url="assets/marker3.patt"
-                    raycaster="objects: .clickable"
-                    emitevents="true"
-                    cursor="fuse: false; rayOrigin: mouse;"
-                >
-                    <a-entity 
-                        gltf-model="#CP3-model" 
-                        rotation="-90 0 0" 
-                        scale="0.01 0.01 0.01"
-                        class="clickable"
-                        gesture-handler
-                        
-                    />
-                </a-marker>
-              
-            <a-entity camera>
-            </a-entity>
-        </a-scene>
-        <div class="centered">
-            <button data-action="Change Camera" onclick="window.location.href = 'https://hins866.github.io/WebAR/gps';">Change Mod</button>
-            <button data-action="Place Mode">Place Mode</button>
-            <button id="snap-img">Save Photo</button>
-        </div>
-        <a href="#" id="download-link">DOWNLOAD</a>
-    </body>
+  <body style='margin : 0px; overflow: hidden;'>
+    <div class="centered instructions">AR Treasure Fragment Collection GAME</div>
+    <div class='speech-bubble'></div>
+    <a-scene embedded arjs cursor="rayOrigin: mouse" accepts-clicks embedded id="scene" embedded gesture-detector>
+      <a-assets>
+          <a-asset-item id="CP1-model" src="./model/bird/scene.gltf"></a-asset-item>
+          <a-asset-item id="CP2-model" src="./model/magnemite/scene.gltf"></a-asset-item>
+          <a-asset-item id="CP3-model" src="./model/little_tokyo/scene.gltf"></a-asset-item>
+          <a-asset-item id="CP4-model" src="./model/question_mark_block/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-marker id="CP1-marker" type="pattern" url="assets/marker.patt">
+        <a-entity id="CP1"   image="./assets/bird.png" scale="1 1 1"class="clickable"rotation="-90 0 0" gesture-handler ></a-entity>
+      </a-marker>
+      <a-marker id="CP2-marker" type="pattern" url="assets/marker2.patt">
+        <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
+      </a-marker>
+      <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
+        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.01 0.01 0.01" animation-mixer></a-entity>
+      </a-marker>
+      <a-marker id="CP4-marker" type="pattern" url="assets/marker4.patt">
+        <a-entity id="CP4"  gltf-model="#CP4-model" rotation="-90 0 0" scale="0.005 0.005 0.005"></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+    <div class="centered">
+      <button onclick="window.location.href = 'https://hins866.github.io/hh/gps';">Change Mod</button>
+      <button >Place Mode</button>
+    </div>
+    <div class="ui"><img id="snap">
+      <a href ="https://hins866.github.io/hh/gps" id="GPS-Mode" title="GPS Mode" >GPS Mode</a>    
+      <a href ="#" id="Place-Mode" title="Place Mode" >Place Mode</a>
+      <a href ="#" id="delete-photo" title="Delete Photo" class="disabled"><i class=" material-icons">delete</i></a>
+      <a href ="#" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+      <a href ="#" id="download-photo" download="WebARCap.png" title="Save Photo" class="disabled" target="_blank"> <i class="material-icons">file_download</i></a>
+    </div>
+  <script src="js/screenshot.js"></script> 
+  </body>
 </html>
-

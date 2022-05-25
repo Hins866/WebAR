@@ -1,2 +1,0 @@
-# WebAR
- Hins WebAR Project
