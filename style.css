@@ -43,7 +43,7 @@
 	width: 0;
 	height: 0;
 	border: 50px solid transparent;
-	border-top-color: #004431;
+	border-top-color: rgb(250, 112, 0);
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -50px;
@@ -90,7 +90,7 @@
 
     height: 60px;
 
-    background-color: #ffffff;
+    background-color: rgb(250, 112, 0);
 
     line-height: 100%;
 
