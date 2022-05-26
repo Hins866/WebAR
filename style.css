@@ -52,11 +52,11 @@
 }
 
 #arjsDebugUIContainer {
-    display: none;
+    display: yes;
 }
 
 .a-enter-vr {
-	display: yes;
+	display: none;
 }
 
 .ui {
