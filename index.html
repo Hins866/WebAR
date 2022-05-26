@@ -30,8 +30,8 @@
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
       </a-marker>
       <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
-        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.01 0.01 0.01" animation-mixer gesture-handler static-body></a-entity>
-        
+        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.05 0.05 0.05" animation-mixer gesture-handler static-body></a-entity>
+        <a-entity gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" dynamic-body ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
