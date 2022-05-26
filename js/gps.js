@@ -1,7 +1,7 @@
 var latitude = prompt("latitude"); 
 var longitude = prompt("longitude");
 const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-alert(distanceMsg,latitude,longitude);   // "890 meters"
+alert('distanceMsg','latitude','longitude');   // "890 meters"
 console.log(latitude,longitude);
 AFRAME.registerComponent('school-playground', {
     /**
