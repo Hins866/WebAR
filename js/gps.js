@@ -1,20 +1,27 @@
-var latitude = prompt("latitude"); 
-var longitude = prompt("longitude");
-const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-function ShowInput() {
-    alert(distanceMsg,latitude,longitude);
-  }
-alert('distanceMsg','latitude','longitude');   // "890 meters"
-console.log(latitude,longitude);
-AFRAME.registerComponent('school-playground', {
-    /**
-     * Code within this function will be called when everything in <a-scene> is ready and loaded.
-     */
-    init: function () {
-      // Add code here!
-      console.log('Welcome, class!');
-      var sceneEl = document.querySelector('a-scene'); 
-      sceneEl.querySelector('a-entity').setAttribute('gps-entity-place', {x: 0, y: 0, z: 0});
-      
+//Ask user Input the location
+var lat = prompt('latitude'); 
+var long = prompt('longitude');
+var input = ('latitude: '+ lat +'; longitude: '+ long)
+
+//Modify the model location by user input
+AFRAME.registerComponent(' Modifying Entities', {
+        /**
+         * Code within this function will be called when everything in <a-scene> is ready and loaded.
+         */
+        init: function () {
+          // Add code here!
+          var sceneEl = document.querySelector('a-scene'); 
+          var gpsEl = sceneEl.querySelector('a-entity')
+  
+          gpsEl.addEventListener('foo', function () {
+            gpsEl.setAttribute('gps-entity-place', input);  
+          });
+          gpsEl.emit('foo');
+        }
+      });; 
+
+//Button for user check inputed value
+function ShowInput(){
+    alert(input);
     }
-  });
+  
