@@ -19,15 +19,15 @@ function handleClickEvent() {
   builders.forEach(function(builder) {
     var builderMarker = document.querySelector("#" + builder.name + "-marker");
     if (builderMarker && builderMarker.object3D.visible) {
-      //const checking = savedpoint.includes(builder.name)
-      //if (checking){
-       // toggleSpeechBubble(builder.successDialogue);
-      //} else {
+      const checking = savedpoint.includes(builder.name)
+      if (checking){
+        toggleSpeechBubble(builder.dialogue);
+      } else {
         //console.log(builder.dialogue);
         toggleSpeechBubble(builder.dialogue);
         savedpoint.push(builder.name);
         //console.log(checking);
-        //console.log(savedpoint);
+        console.log(savedpoint);
     }
   });
 }
