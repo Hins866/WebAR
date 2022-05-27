@@ -27,14 +27,14 @@
 
       </a-assets>
       <a-marker id="CP1-marker" markerhandler1 emitevents="true" cursor="rayOrigin: mouse" type="pattern" url="assets/marker.patt">
-        <a-image id="CP1" src="assets/bird.png" scale="1 1 1" class="clickable" rotation="-90 0 0" gesture-handler visible="false"></a-image>
-        <a-text id="CP1-text" value="I am a bird" color="blue" rotation="-90 0 0" position="-0.7 0 -0.7" visible="false"></a-text>  
+        <a-image id="CP1" src="assets/bird.png" scale="1 1 1" class="clickable" rotation="-90 0 0" gesture-handler ></a-image>
+        <a-text id="CP1-text" value="I am a bird" color="blue" rotation="-90 0 0" position="-0.7 0 -0.7" ></a-text>  
       </a-marker>
       <a-marker id="CP2-marker" type="pattern" url="assets/marker2.patt">
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
       </a-marker>
       <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
-        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.02 0.02 0.02" animation-mixer gesture-handler static-body></a-entity>
+        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.005 0.005 0.005" animation-mixer gesture-handler static-body></a-entity>
         <a-entity gltf-model="#CP3-model2" rotation="-90 0 0" scale="0.02 0.02 0.02" animation-mixer gesture-handler dynamic-body></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
