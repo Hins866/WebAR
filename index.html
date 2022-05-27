@@ -8,6 +8,7 @@
       <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
       <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="js/marker_event.js"></script>
       <script src="js/models.js"></script>
       <script src="js/interaction.js"></script>
       <title>AR Treasure Fragment Collection GAME</title>
@@ -25,7 +26,7 @@
       </a-assets>
       <a-marker id="CP1-marker" markerhandler1 emitevents="true" cursor="rayOrigin: mouse" type="pattern" url="assets/marker.patt">
         <a-image id="CP1" src="assets/bird.png" scale="1 1 1" class="clickable" rotation="-90 0 0" gesture-handler></a-image>
-        <a-text id="CP1-text" value="Hello, World!" color="blue" rotation="-90 0 0" position="-0.7 0 -0.7" visible="false"></a-text>  
+        <a-text id="CP1-text" value="I am a bird" color="blue" rotation="-90 0 0" position="-0.7 0 -0.7" visible="false"></a-text>  
       </a-marker>
       <a-marker id="CP2-marker" type="pattern" url="assets/marker2.patt">
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
