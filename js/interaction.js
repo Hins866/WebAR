@@ -26,8 +26,10 @@ function handleClickEvent() {
         //console.log(builder.dialogue);
         toggleSpeechBubble(builder.dialogue);
         savedpoint.push(builder.name);
+        sessionStorage.checkedpoint = savedpoint;
         //console.log(checking);
         console.log(savedpoint);
+      }
     }
   });
 }
