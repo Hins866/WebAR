@@ -62,3 +62,16 @@ window.addEventListener("DOMContentLoaded", function() {
     message.textContent = "Exited Immersive Mode";
   });
 });
+
+AFRAME.registerComponent('model-change', {
+  init: function () {
+    // Solution for Handling Events.
+    var sceneEl = document.querySelector('a-scene'); 
+    var modelEl = sceneEl.querySelector('a-gltf-model')
+    
+    modelEl.addEventListener('change', function () {
+      modelEl.setAttribute('src', '#CP2-model');  
+    });
+    modelEl.emit('change');
+  }
+});
