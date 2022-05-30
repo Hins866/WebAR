@@ -5,18 +5,14 @@ var input = ('latitude: '+ lat +'; longitude: '+ long)
 
 //Modify the model location by user input
 AFRAME.registerComponent(' Modifying Entities', {
-        /**
-         * Code within this function will be called when everything in <a-scene> is ready and loaded.
-         */
         init: function () {
-          // Add code here!
           var sceneEl = document.querySelector('a-scene'); 
           var gpsEl = sceneEl.querySelector('a-entity')
   
-          gpsEl.addEventListener('foo', function () {
+          gpsEl.addEventListener('gps-update', function () {
             gpsEl.setAttribute('gps-entity-place', input);  
           });
-          gpsEl.emit('foo');
+          gpsEl.emit('gps-update');
         }
       });; 
 

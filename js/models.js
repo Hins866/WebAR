@@ -13,9 +13,8 @@ ARModel.prototype.speak = function() {
 }
 
 //Builder model
-function Builder(name, dialogue, successDialogue) {
+function Builder(name, dialogue ) {
     ARModel.call(this, name, dialogue);
-    this.successDialogue = successDialogue;
 }
 
 Builder.prototype = Object.create(ARModel.prototype);
@@ -25,26 +24,20 @@ function initiateModels() {
       {
         name: 'CP1',
         dialogue: 'Congratulation! You find Check Point 1',
-        successDialogue: 'You had find Check Point 1'
       },
       {
         name: 'CP2',
         dialogue: 'Congratulation! You find Check Point 2',
-        successDialogue: 'You had find Check Point 2'
       },
       {
         name: 'CP3',
         dialogue: 'Congratulation! You find Check Point 3',
-        successDialogue: 'You had find Check Point 3'
       }
     ];
-
+  
     buildersArray.forEach(function(builder){
-        builders.push(new Builder(builder.name, builder.dialogue, builder.successDialogue));
-        });
-
-    console.log('builders', builders);
-    
+        builders.push(new Builder(builder.name, builder.dialogue));
+        });    
 }
 
 initiateModels();
