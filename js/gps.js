@@ -16,7 +16,7 @@ function Input(){
 var lat = prompt('latitude'); 
 var long = prompt('longitude');
 this.input = ('latitude: '+ lat +'; longitude: '+ long)
-sessionStorage.setItem('checkedpoint','CP4');
+sessionStorage.setItem('checkedgpspoint','CP4');
 }
 
 //Button for user check inputed value
