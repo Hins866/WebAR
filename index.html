@@ -1,5 +1,6 @@
 <html>
   <head>
+      <title>AR Treasure Fragment Collection GAME</title>
       <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
       <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -7,11 +8,12 @@
       <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
       <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-      <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+      <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
       <script src="js/marker_event.js"></script>
       <script src="js/models.js"></script>
-      <script src="js/interaction.js"></script>
-      <title>AR Treasure Fragment Collection GAME</title>
+      <script src="js/interaction.js"></script> 
+      <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
   </head>
 
@@ -34,10 +36,10 @@
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
       </a-marker>
       <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
-        <a-entity id="CP3"  gltf-model="#CP3-model" rotation="-90 0 0" scale="0.005 0.005 0.005" animation-mixer gesture-handler static-body></a-entity>
-        <a-entity gltf-model="#CP3-model2" rotation="-90 0 0" scale="0.02 0.02 0.02" animation-mixer gesture-handler dynamic-body></a-entity>
+        <a-entity id="CP3" gltf-model="#CP3-model2" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity>
+        <a-entity gltf-model="#CP3-model2" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity></a-plane>
       </a-marker>
-      <a-entity camera></a-entity>
+      <a-entity camera capture-mouse cursor="rayOrigin:mouse" super-hands="colliderEvent: raycaster-intersection; colliderEventProperty: els; colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;"></a-entity>
     </a-scene>
     <div class="ui"><img id="snap">
       <a href ="https://hins866.github.io/WebAR/gps" id="GPS-Mode" title="GPS Mode" ><i class=" material-icons">place</i></a>    
