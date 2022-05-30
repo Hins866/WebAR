@@ -10,7 +10,6 @@ AFRAME.registerComponent('markerhandler1', {
             const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
             if (cp1 && intersectedElement === cp1) {
                 cp1text.setAttribute('visible', true);
-                console.log(testing)
             }
         });
 }});

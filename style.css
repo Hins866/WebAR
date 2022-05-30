@@ -35,7 +35,7 @@ button {
     outline: none;
 }
 
-.speech-bubble {
+.information-bubble {
 	position: absolute;
 	width: 80%;
 	margin: 0 auto;
@@ -51,7 +51,7 @@ button {
     display: none;
 }
 
-.speech-bubble:after {
+.information-bubble:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
