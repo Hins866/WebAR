@@ -1,4 +1,4 @@
-var builders = [];
+var checkpoints = [];
 
 function ARModel(name, dialogue) {
     //we can make name link to the el id to find it on click?
@@ -13,14 +13,14 @@ ARModel.prototype.speak = function() {
 }
 
 //Builder model
-function Builder(name, dialogue ) {
+function Model(name, dialogue ) {
     ARModel.call(this, name, dialogue);
 }
 
-Builder.prototype = Object.create(ARModel.prototype);
+Model.prototype = Object.create(ARModel.prototype);
 
 function initiateModels() {
-    var buildersArray = [
+    var checkpointsArray = [
       {
         name: 'CP1',
         dialogue: 'Congratulation! You find Check Point 1',
@@ -35,8 +35,8 @@ function initiateModels() {
       }
     ];
   
-    buildersArray.forEach(function(builder){
-        builders.push(new Builder(builder.name, builder.dialogue));
+    checkpointsArray.forEach(function(model){
+        checkpoints.push(new Model(model.name, model.dialogue));
         });    
 }
 

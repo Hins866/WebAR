@@ -16,16 +16,16 @@ AFRAME.registerComponent('accepts-clicks', {
 //Click event checking
 function handleClickEvent() {
   console.log("click event active");
-  builders.forEach(function(builder) {
-    var builderMarker = document.querySelector("#" + builder.name + "-marker");
-    if (builderMarker && builderMarker.object3D.visible) {
-      const checking = savedpoint.includes(builder.name)
+  checkpoints.forEach(function(model) {
+    var CheckpointMarker = document.querySelector("#" + model.name + "-marker");
+    if (CheckpointMarker && CheckpointMarker.object3D.visible) {
+      const checking = savedpoint.includes(model.name)
       if (checking){
-        toggleSpeechBubble(builder.dialogue);
+        toggleSpeechBubble(model.dialogue);
       } else {
         //console.log(builder.dialogue);
-        toggleSpeechBubble(builder.dialogue);
-        savedpoint.push(builder.name);
+        toggleSpeechBubble(model.dialogue);
+        savedpoint.push(model.name);
         sessionStorage.checkedpoint = savedpoint;
         //console.log(checking);
         console.log(savedpoint);
@@ -40,9 +40,9 @@ function hideSpeechBubbleIfNoMarker() {
   if (speechBubble.style.display === 'none' || !speechBubble.style.display) return;
 
   var shouldHide = true;
-  builders.forEach(function(builder){
-    var builderMarker = document.querySelector("#" + builder.name + "-marker");
-    if (builderMarker && builderMarker.object3D.visible) shouldHide = false;
+  checkpoints.forEach(function(model){
+    var CheckpointMarker = document.querySelector("#" + model.name + "-marker");
+    if (CheckpointMarker && CheckpointMarker.object3D.visible) shouldHide = false;
   });
 
   if (shouldHide) speechBubble.style.display = 'none';
