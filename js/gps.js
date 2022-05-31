@@ -1,5 +1,5 @@
 //Modify the model location by user input
-AFRAME.registerComponent(' Modifying Entities', {
+AFRAME.registerComponent('Modifying Entities', {
   init: function () {
     var sceneEl = document.querySelector('a-scene'); 
     var gpsEl = sceneEl.querySelector('a-entity')
