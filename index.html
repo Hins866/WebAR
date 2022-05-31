@@ -4,9 +4,7 @@
       <title>AR Treasure Fragment Collection GAME</title>
       <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-      <!--<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-      <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>-->
-      <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+ <!--    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script> -->
       <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
       <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -21,7 +19,7 @@
   <body style='margin : 0px; overflow: hidden;'>
     <div class="centered instructions">AR Treasure Fragment Collection GAME - Marker Based</div>
     <div class='information-bubble'></div>
-    <a-scene arjs cursor="rayOrigin: mouse" accepts-clicks id="scene" embedded gesture-detector >
+    <a-scene arjs cursor="rayOrigin: mouse" accepts-clicks id="scene" embedded gesture-detector physics="debug: true">
       <a-assets>
           <a-asset-item id="CP1-model" src="./model/bird/scene.gltf"></a-asset-item>
           <a-asset-item id="CP2-model" src="./model/magnemite/scene.gltf"></a-asset-item>
@@ -38,8 +36,13 @@
         <a-entity id="CP2"  gltf-model="#CP2-model" rotation="-90 100 -90"  scale="0.15 0.15 0.15" animation-mixer ></a-entity>
       </a-marker>
       <a-marker id="CP3-marker" type="pattern" url="assets/marker3.patt">
-        <a-entity id="CP3" gltf-model="#CP3-model" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity>
-        <a-entity gltf-model="#CP3-model2" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity></a-plane>
+        <!--<a-entity id="CP3" gltf-model="#CP3-model" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity>
+        <a-entity gltf-model="#CP3-model2" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable></a-entity>-->
+
+        <a-entity id="CP3" gltf-model="#CP3-model" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable dynamic-body></a-entity>
+          <a-entity gltf-model="#CP3-model2" scale="0.001 0.001 0.001" animation-mixer  gesture-handler grabbable stretchable draggable droppable static-body></a-entity>
+          <a-plane static-body  scale="10 10 0" rotation="-90 0 0" color="green" position="0 -3 0" visible="false"></a-plane>
+          <a-plane static-body  scale="100 100 0" color="blue" position="0 0 1"></a-plane>
       </a-marker>
       <a-entity camera capture-mouse cursor="rayOrigin:mouse" super-hands="colliderEvent: raycaster-intersection; colliderEventProperty: els; colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;"></a-entity>
     </a-scene>
