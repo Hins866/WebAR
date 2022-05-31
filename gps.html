@@ -23,17 +23,15 @@
 
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
-        <div class="centered">
-            <button onclick="Input()">Input</button>
-            <button onclick="ShowInput()">Check</button>
-        </div>
-		<div class="ui"><img id="snap">
+        <div class="ui"><img id="snap">
 			<a href ="https://hins866.github.io/WebAR" id="Marker-Based" title="Marker Based"><i class=" material-icons">image_search</i></a>    
 			<a href ="https://hins866.github.io/WebAR/hit-test" id="Place-Mode" title="Place Mode"><i class=" material-icons">control_point</i></a>
-			<a href ="#" id="delete-photo" title="Delete Photo" class="disabled"><i class=" material-icons">delete</i></a>
+			<a href ="#" onclick="Input()" id="Input-Location" title="Input Location"><i class="material-icons">input</i></a>
+            <a href ="#" onclick="ShowInput()" id="Show-Input" title="Show Input"><i class="material-icons">output</i></a>
+            <a href ="#" id="delete-photo" title="Delete Photo" class="disabled"><i class=" material-icons">delete</i></a>
 			<a href ="#" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
 			<a href ="#" id="download-photo" download="WebARCap.png" title="Save Photo" class="disabled" target="_blank"> <i class="material-icons">file_download</i></a>
-		  </div>
+        </div>
 		<script src="js/screenshot.js"></script> 
     </body>
 </html>
