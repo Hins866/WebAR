@@ -81,3 +81,8 @@ function Savedpoint(){
     let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
    alert(globalpoint+globalpoint2);
 }
+
+function ClearSavedpoint(){
+    sessionStorage.clear();
+    alert(globalpoint+globalpoint2);
+}
