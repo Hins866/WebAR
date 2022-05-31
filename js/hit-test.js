@@ -79,5 +79,5 @@ AFRAME.registerComponent('model-change', {
 function Savedpoint(){
     let globalpoint = sessionStorage.getItem('checkedpoint');
     let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
-   alert(globalpoint+globalpoint2) </script>
+   alert(globalpoint+globalpoint2);
 }
