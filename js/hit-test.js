@@ -71,7 +71,7 @@ AFRAME.registerComponent('model-change', {
         console.log(gltfEl.getAttribute('src'));
         
         gltfEl.addEventListener('change', function () {
-        gltfEl.setAttribute('src','#CP2-model');
+        gltfEl.setAttribute('src', show);
         //src value changed but dont update the model???
         console.log(gltfEl.getAttribute('src'));
         });
