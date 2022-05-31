@@ -76,6 +76,22 @@ AFRAME.registerComponent('model-change', {
   }
 });
 
+let globalpoint = sessionStorage.getItem('checkedpoint');
+let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
+var modelSavedpoint = [];
+modelSavedpoint.push(globalpoint);
+modelSavedpoint.push(globalpoint2);
+
+if (modelSavedpoint.includes(CP1)){
+  var show="CP1-model"
+  alert(show)
+}
+function Savedpoint(){
+    alert(modelSavedpoint);
+}
+
+/**
+
 function Savedpoint(){
     let globalpoint = sessionStorage.getItem('checkedpoint');
     let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
@@ -84,7 +100,8 @@ function Savedpoint(){
     modelSavedpoint.push(globalpoint2);
     alert(modelSavedpoint);
 }
-
+* 
+*/
 function ClearSavedpoint(){
     sessionStorage.clear();
 }
