@@ -79,6 +79,7 @@ AFRAME.registerComponent('model-change', {
   }
 });
 
+//Connect the checked point record from marker tracking page and location based page
 let globalpoint = sessionStorage.getItem('checkedpoint');
 let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
 var modelSavedpoint = [];
@@ -96,11 +97,11 @@ if (modelSavedpoint.includes("CP4")){
 }
 alert(show)
 
-
+//Button for user check his record
 function Savedpoint(){
     alert("Your checked point " + modelSavedpoint);
 }
-
+//Button for user clear his record
 function ClearSavedpoint(){
     sessionStorage.clear();
     alert("Your check point record has been reset")
