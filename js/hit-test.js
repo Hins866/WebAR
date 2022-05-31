@@ -95,11 +95,9 @@ if (modelSavedpoint.includes("CP4")){
 }else if (modelSavedpoint.includes("CP1")){
     var show="#CP1-model"
 }
-alert(show)
-
 //Button for user check his record
 function Savedpoint(){
-    alert("Your checked point " + modelSavedpoint);
+    alert("Your checked point is " + modelSavedpoint);
 }
 //Button for user clear his record
 function ClearSavedpoint(){
