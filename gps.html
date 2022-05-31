@@ -20,12 +20,7 @@
                 <a-asset-item id="CP4-model" src="model/articuno/scene.gltf"></a-asset-item>
             </a-assets>
 
-                <a-entity
-                    look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#CP4-model"
-                    scale="0.1 0.1 0.1"
-                    gps-entity-place="latitude: 22.486674; longitude: 114.143611;"
+                <a-entity look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#CP4-model" scale="0.1 0.1 0.1" gps-entity-place="latitude: 22.486674; longitude: 114.143611;"
                 ></a-entity>
 
             <a-camera gps-camera rotation-reader></a-camera>
@@ -33,6 +28,7 @@
         <div class="centered">
             <button onclick="Input()">Input</button>
             <button onclick="ShowInput()">Check</button>
+        </div>
 		<div class="ui"><img id="snap">
 			<a href ="https://hins866.github.io/WebAR" id="Marker-Based" title="Marker Based"><i class=" material-icons">image_search</i></a>    
 			<a href ="https://hins866.github.io/WebAR/hit-test" id="Place-Mode" title="Place Mode"><i class=" material-icons">control_point</i></a>

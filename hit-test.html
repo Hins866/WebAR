@@ -16,7 +16,7 @@
   <script>
     let globalpoint = sessionStorage.getItem('checkedpoint');
     let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
-   alert(globalpoint+globalpoint2) </script>
+   alert(globalpoint+","+globalpoint2) </script>
   <style>
 		body {
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -89,6 +89,10 @@
 
 	<div id="dom-overlay">
     <div class="centered instructions">AR Treasure Fragment Collection GAME - Place Mode</div>
+    <div class="centered">
+      <button onclick="Savedpoint()">Saved</button>
+      <button onclick="ClearSavedpoint()">Clear</button>
+    </div>
 		<div id="dom-overlay-message">Enter AR to start.</div>
 	</div>
   
