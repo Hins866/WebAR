@@ -92,7 +92,7 @@ if (modelSavedpoint.includes("CP4")){
     var show="CP3-model"
 }else if (modelSavedpoint.includes("CP2")){
     var show="CP2-model"
-}else{
+}else if (modelSavedpoint.includes("CP1")){
     var show="CP1-model"
 }
 alert(show)
