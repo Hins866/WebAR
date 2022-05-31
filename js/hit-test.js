@@ -82,7 +82,7 @@ var modelSavedpoint = [];
 modelSavedpoint.push(globalpoint);
 modelSavedpoint.push(globalpoint2);
 
-if (modelSavedpoint.includes(CP1)){
+if (modelSavedpoint.includes("CP1")){
   var show="CP1-model"
   alert(show)
 }
