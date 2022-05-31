@@ -1,5 +1,3 @@
-/* jshint esversion: 9 */
-/* global THREE, AFRAME */
 (function() {
   "use strict";
   const direction = new THREE.Vector3();

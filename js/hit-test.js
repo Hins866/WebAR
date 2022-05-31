@@ -1,12 +1,11 @@
-/* jshint esversion: 9 */
-/* global THREE, AFRAME */
-
 AFRAME.registerComponent("hide-on-hit-test-start", {
   init: function() {
     var self = this;
+    //hide model when enter hit testing
     this.el.sceneEl.addEventListener("ar-hit-test-start", function() {
       self.el.object3D.visible = false;
     });
+    //show model when enter hit testing
     this.el.sceneEl.addEventListener("exit-vr", function() {
       self.el.object3D.visible = true;
     });
@@ -17,8 +16,6 @@ window.addEventListener("DOMContentLoaded", function() {
   const sceneEl = document.querySelector("a-scene");
   const message = document.getElementById("dom-overlay-message");
 
-  // If the user taps on any buttons or interactive elements we may add then prevent
-  // Any WebXR select events from firing
   message.addEventListener("beforexrselect", e => {
     e.preventDefault();
   });
@@ -28,30 +25,30 @@ window.addEventListener("DOMContentLoaded", function() {
       // Entered AR
       message.textContent = "";
 
-      // Hit testing is available
+      // Told user hit testing available
       this.addEventListener(
         "ar-hit-test-start",
         function() {
-          message.innerHTML = `Scanning environment, finding surface.`;
+          message.innerHTML = `Scanning environment, please wait.`;
         },
         { once: true }
       );
 
-      // Has managed to start doing hit testing
+      // 
+      // Told user place the model
       this.addEventListener(
         "ar-hit-test-achieved",
         function() {
-          message.innerHTML = `Select the location to place<br />By tapping on the screen or selecting with your controller.`;
+          message.innerHTML = `Select the location to place`;
         },
         { once: true }
       );
 
-      // User has placed an object
       this.addEventListener(
         "ar-hit-test-select",
         function() {
-          // Object placed for the first time
-          message.textContent = "Well done!";
+          // User Placed the model show 
+          message.textContent = "Finish! Lets save the photo!!";
         },
         { once: true }
       );
@@ -63,16 +60,22 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+//Model Recording the checkedpoint to display different model
 AFRAME.registerComponent('model-change', {
   init: function () {
-    // Solution for Handling Events.
-    var sceneEl = document.querySelector('a-scene'); 
-    var modelEl = sceneEl.querySelector('a-gltf-model')
-    
-    modelEl.addEventListener('change', function () {
-      modelEl.setAttribute('src', '#CP2-model');  
-    });
-    modelEl.emit('change');
+        var sceneEl = document.querySelector('a-scene');
+        var placeEl = document.querySelector('#place-model');
+        var gltfEl = document.querySelector('a-gltf-model');
+        console.log(sceneEl.querySelector('#place-model'));
+        console.log(placeEl.querySelector('a-gltf-model'));
+        console.log(gltfEl.getAttribute('src'));
+        
+        gltfEl.addEventListener('change', function () {
+        gltfEl.setAttribute('src','#CP2-model');
+        //src value changed but dont update the model???
+        console.log(gltfEl.getAttribute('src'));
+        });
+    gltfEl.emit('change');
   }
 });
 
