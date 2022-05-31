@@ -85,26 +85,23 @@ var modelSavedpoint = [];
 modelSavedpoint.push(globalpoint);
 modelSavedpoint.push(globalpoint2);
 
-if (modelSavedpoint.includes("CP1")){
-  var show="CP1-model"
-  alert(show)
+if (modelSavedpoint.includes("CP4")){
+    var show="CP4-model"
+}else if (modelSavedpoint.includes("CP3")){
+    var show="CP3-model"
+}else if (modelSavedpoint.includes("CP2")){
+    var show="CP2-model"
+}else{
+    var show="CP1-model"
 }
+alert(show)
+
+
 function Savedpoint(){
-    alert(modelSavedpoint);
+    alert("Your checked point " + modelSavedpoint);
 }
 
-/**
-
-function Savedpoint(){
-    let globalpoint = sessionStorage.getItem('checkedpoint');
-    let globalpoint2 = sessionStorage.getItem('checkedgpspoint');
-    var modelSavedpoint = [];
-    modelSavedpoint.push(globalpoint);
-    modelSavedpoint.push(globalpoint2);
-    alert(modelSavedpoint);
-}
-* 
-*/
 function ClearSavedpoint(){
     sessionStorage.clear();
+    alert("Your check point record has been reset")
 }
